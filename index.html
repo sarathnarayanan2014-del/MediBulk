@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MediBulk – Wholesale medicines and medical supplies</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f9f9;--card:#fff;--ink:#0a2540;--mute:#5b6f82;--line:#dce8ea;--teal:#0e7c86;--teal2:#0a5f68;--mint:#e3f4f2;--navy:#0a2540;--amber:#b86a00;--ok:#1d7a4d;--red:#b3402f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08161c;--card:#0f222a;--ink:#e6f1f3;--mute:#93a9b2;--line:#1d3641;--teal:#33b4be;--teal2:#2aa0aa;--mint:#11303a;--navy:#061219;--amber:#e0a14a;--ok:#4fc08a;--red:#e57a6a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#08161c;--card:#0f222a;--ink:#e6f1f3;--mute:#93a9b2;--line:#1d3641;--teal:#33b4be;--teal2:#2aa0aa;--mint:#11303a;--navy:#061219;--amber:#e0a14a;--ok:#4fc08a;--red:#e57a6a;color-scheme:dark}
+*{box-sizing:border-box}html{height:100%;scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 "Plus Jakarta Sans",system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:40}
+h1,h2,h3{margin:0;letter-spacing:-.02em;line-height:1.12}
+button,input,select{font:inherit;color:inherit}button{cursor:pointer}
+:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.top{background:var(--navy);color:#cfe3e6;font-size:13px}.top .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:7px;padding-bottom:7px;flex-wrap:wrap}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--card);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:20px;height:70px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;color:var(--ink);text-decoration:none}
+.logo svg{width:34px;height:34px}.logo span{color:var(--teal)}
+.nav nav{display:flex;gap:2px;margin-left:10px;flex:1}.nav nav a{padding:8px 12px;color:var(--mute);text-decoration:none;font-weight:600;font-size:14px;border-radius:8px}.nav nav a:hover{background:var(--mint);color:var(--teal2)}
+.btn{border:0;background:var(--teal);color:#fff;padding:11px 20px;border-radius:10px;font-weight:700;font-size:14px;transition:background .15s}.btn:hover{background:var(--teal2)}
+.btn.alt{background:var(--card);color:var(--ink);border:1px solid var(--line)}.btn.alt:hover{background:var(--mint)}
+.btn.sm{padding:8px 14px;font-size:13px}
+.cartb{position:relative}.cartb b{background:var(--amber);color:#fff;border-radius:99px;font-size:11px;min-width:19px;height:19px;display:inline-grid;place-items:center;margin-left:6px}
+.hero{background:linear-gradient(135deg,#0a2540 0%,#0a4a57 100%);color:#fff}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;padding-top:64px;padding-bottom:64px;align-items:center}
+.hero h1{font-size:clamp(34px,5vw,58px);font-weight:800}
+.hero p{color:#bcd6da;max-width:520px;margin:18px 0 26px;font-size:17px}
+.search{display:flex;background:#fff;border-radius:12px;padding:6px;max-width:540px;box-shadow:0 12px 30px #0004}
+.search input{flex:1;border:0;background:none;padding:10px 14px;color:#0a2540;min-width:0}.search input:focus{outline:0}
+.stats{display:flex;gap:30px;margin-top:30px;flex-wrap:wrap}.stats b{font-size:26px;display:block;font-weight:800}.stats small{color:#9fc3c8}
+.tiers{background:#ffffff14;border:1px solid #ffffff30;border-radius:18px;padding:24px;backdrop-filter:blur(6px)}
+.tiers h3{font-size:18px;margin-bottom:4px}.tiers p{font-size:13px;margin:0 0 16px;color:#b5d2d6}
+.tr{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid #ffffff22}
+.tr span{color:#cfe3e6}.tr b{background:#ffffff1c;border-radius:99px;padding:3px 12px;font-size:13px}.tr b.hi{background:#f2b04a;color:#2a1a00}
+.trust{background:var(--card);border-bottom:1px solid var(--line)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-top:20px;padding-bottom:20px}
+.trust div{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:var(--mute)}.trust b{display:block;color:var(--ink);font-size:14px}
+.trust i{flex:none;width:38px;height:38px;border-radius:10px;background:var(--mint);display:grid;place-items:center;color:var(--teal);font-style:normal;font-size:18px}
+.shop{padding:48px 0 30px}.shop h2{font-size:clamp(26px,3.4vw,36px)}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
+.chip{border:1px solid var(--line);background:var(--card);padding:8px 16px;border-radius:99px;font-size:14px;font-weight:600;color:var(--mute)}
+.chip.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.art{height:130px;display:grid;place-items:center;background:var(--mint);position:relative}.art svg{width:64px;height:64px}
+.tag{position:absolute;top:10px;left:10px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:99px;background:var(--card);color:var(--ok)}.tag.rx{color:var(--red)}
+.body{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.body small{color:var(--mute)}.body h3{font-size:16px;line-height:1.3}
+.price{font-size:22px;font-weight:800;margin-top:6px}.price small{font-weight:500;font-size:12px}
+.ladder{font-size:12.5px;color:var(--mute);border-top:1px dashed var(--line);padding-top:8px;display:grid;gap:3px}
+.ladder span{display:flex;justify-content:space-between}.ladder b{color:var(--teal2)}
+.add{display:flex;gap:8px;margin-top:auto;padding-top:12px}
+.qty{width:72px;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:8px;text-align:center}
+.add .btn{flex:1}
+.how{padding:30px 0 56px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+.steps div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}.steps h3{font-size:17px;margin-bottom:6px}.steps p{margin:0;color:var(--mute)}
+.cta{background:var(--navy);color:#fff;padding:52px 0}.cta .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.cta h2{font-size:clamp(26px,3.4vw,36px)}.cta p{color:#a9c6cb}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:10px}.form input,.form select{width:100%;padding:12px;border-radius:10px;border:1px solid #ffffff30;background:#ffffff12;color:#fff}
+.form input::placeholder{color:#8fb0b6}.form select option{color:#0a2540}.form .full{grid-column:1/-1}
+footer{padding:36px 0;color:var(--mute);font-size:13px}footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.ov{position:fixed;inset:0;background:#06121a99;z-index:50;display:none}.ov.on{display:block}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(430px,100%);background:var(--card);z-index:60;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px)}
+.drawer.on{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}.dh h3{font-size:19px}
+.di{flex:1;overflow:auto;padding:8px 20px}
+.li{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.li small{display:block;color:var(--mute)}
+.li button{background:none;border:0;color:var(--red);font-size:12px;padding:0;margin-top:4px}
+.df{padding:18px 20px calc(18px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line)}
+.sum{display:flex;justify-content:space-between;color:var(--mute);margin-bottom:4px}.sum.t{color:var(--ink);font-weight:800;font-size:18px;margin:8px 0 14px}
+.empty{color:var(--mute);padding:40px 0;text-align:center}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);background:var(--navy);color:#fff;padding:12px 20px;border-radius:12px;opacity:0;pointer-events:none;transition:.25s;z-index:80;font-weight:600}
+.toast.on{opacity:1;transform:translateX(-50%)}
+@media (max-width:860px){.hero .wrap,.cta .wrap{grid-template-columns:1fr}.nav nav{display:none}.trust .wrap{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.nav{gap:10px}.logo{flex:1}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style></head><body>
+<div class="top"><div class="wrap"><span>Licensed distributor for pharmacies, hospitals and clinics</span><span>Order desk: Mon–Sat, 9 am – 7 pm</span></div></div>
+<header><div class="wrap nav">
+<a class="logo" href="#top"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#0e7c86"/><path d="M17 9h6v8h8v6h-8v8h-6v-8H9v-6h8z" fill="#fff"/></svg>Medi<span>Bulk</span></a>
+<nav><a href="#shop">Catalogue</a><a href="#how">How it works</a><a href="#quote">Request a quote</a></nav>
+<button class="btn alt sm" id="th" aria-label="Switch light or dark theme">Theme</button>
+<button class="btn cartb" id="cb">Order list<b id="cc">0</b></button>
+</div></header>
+
+<section class="hero" id="top"><div class="wrap">
+<div><h1>Wholesale medicines and medical supplies, delivered to your counter.</h1>
+<p>Stock your pharmacy, clinic or hospital with genuine, batch-tracked products at tiered case prices. GST invoices on every order.</p>
+<div class="search"><input id="q" placeholder="Search by medicine, brand or item" aria-label="Search products"><button class="btn" onclick="go()">Search</button></div>
+<div class="stats"><div><b>5,000+</b><small>Products in catalogue</small></div><div><b>48 hrs</b><small>Typical dispatch</small></div><div><b>Up to 18%</b><small>Off at bulk tiers</small></div></div></div>
+<div class="tiers"><h3>The more you order, the less you pay</h3><p>Every product follows the same case-based pricing ladder.</p>
+<div class="tr"><span>10 – 49 cases</span><b>Base price</b></div><div class="tr"><span>50 – 99 cases</span><b>6% off</b></div><div class="tr"><span>100 – 249 cases</span><b>12% off</b></div><div class="tr"><span>250 cases and above</span><b class="hi">18% off</b></div></div>
+</div></section>
+
+<section class="trust"><div class="wrap">
+<div><i>✔</i><span><b>Genuine stock</b>Sourced direct from manufacturers</span></div>
+<div><i>❄</i><span><b>Cold-chain ready</b>Temperature-controlled dispatch</span></div>
+<div><i>🧾</i><span><b>GST invoicing</b>Input-credit ready bills</span></div>
+<div><i>🔎</i><span><b>Batch tracking</b>Batch and expiry on every pack</span></div>
+</div></section>
+
+<section class="shop" id="shop"><div class="wrap">
+<h2>Wholesale catalogue</h2>
+<div class="bar" id="cats" role="tablist"></div>
+<div class="grid" id="grid"></div>
+<p class="empty" id="none" hidden>No products match your search. Clear the search box or try another category.</p>
+</div></section>
+
+<section class="how" id="how"><div class="wrap"><h2 style="font-size:clamp(26px,3.4vw,36px)">Ordering in three steps</h2>
+<div class="steps"><div><h3>1. Build your order list</h3><p>Choose products and number of cases. Prices drop automatically as quantity grows.</p></div><div><h3>2. Send your details</h3><p>Share your business name and drug licence number. Prescription items are verified before dispatch.</p></div><div><h3>3. Confirm and receive</h3><p>Our team confirms stock and payment terms, then ships with a GST invoice and batch details.</p></div></div></div></section>
+
+<section class="cta" id="quote"><div class="wrap">
+<div><h2>Need a custom quote or regular supply?</h2><p>Tell us what you stock. We will share pricing, credit terms and delivery schedule within one working day.</p></div>
+<div class="form"><input id="f1" placeholder="Business name"><input id="f2" placeholder="Phone number" inputmode="tel"><select id="f3"><option>Pharmacy / chemist</option><option>Hospital</option><option>Clinic</option><option>Distributor</option></select><input id="f4" placeholder="Drug licence number"><button class="btn full" style="background:#f2b04a;color:#2a1a00" onclick="sendQ()">Request quote</button></div>
+</div></section>
+
+<footer><div class="wrap"><span>© 2026 MediBulk. Wholesale supply for licensed buyers only.</span><span>Prescription medicines are supplied only against a valid licence.</span></div></footer>
+
+<div class="ov" id="ov"></div>
+<aside class="drawer" id="dr" aria-label="Order list"><div class="dh"><h3>Your order list</h3><button class="btn alt sm" id="cx">Close</button></div><div class="di" id="di"></div>
+<div class="df" id="df"></div></aside>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const C=["All","Medicines","Injectables","Consumables","Equipment","Personal protection"];
+const P=[
+{n:"Paracetamol 500 mg tablets",b:"Generic · 10×10 strip",c:1,p:620,u:"case of 100 strips",rx:0,ic:"pill"},
+{n:"Amoxicillin 500 mg capsules",b:"Antibiotic · 10×10",c:1,p:1480,u:"case of 100 strips",rx:1,ic:"pill"},
+{n:"Metformin 500 mg tablets",b:"Diabetes care · 10×15",c:1,p:910,u:"case of 100 strips",rx:1,ic:"pill"},
+{n:"ORS electrolyte sachets",b:"Rehydration · 200 sachets",c:1,p:1150,u:"case of 200",rx:0,ic:"pill"},
+{n:"Insulin glargine 100 IU/mL",b:"Cold chain · 3 mL cartridge",c:2,p:5400,u:"box of 50",rx:1,ic:"drop"},
+{n:"Disposable syringes 5 mL",b:"Sterile · luer lock",c:2,p:1250,u:"case of 1,000",rx:0,ic:"syr"},
+{n:"IV cannula 20G",b:"Sterile · safety type",c:3,p:2100,u:"box of 500",rx:0,ic:"syr"},
+{n:"Sterile gauze swabs 10×10 cm",b:"Cotton · 8-ply",c:3,p:860,u:"case of 50 packs",rx:0,ic:"box"},
+{n:"Digital thermometer",b:"Fast read · waterproof",c:4,p:3900,u:"box of 50",rx:0,ic:"box"},
+{n:"Pulse oximeter fingertip",b:"OLED display",c:4,p:12500,u:"box of 25",rx:0,ic:"box"},
+{n:"Nitrile examination gloves",b:"Powder-free · size M",c:5,p:1650,u:"case of 10 boxes",rx:0,ic:"box"},
+{n:"3-ply surgical face masks",b:"BFE 98% · ear loop",c:5,p:1200,u:"case of 2,000",rx:0,ic:"box"}];
+const T=[[250,.18],[100,.12],[50,.06],[10,0]],cart={};let cat=0;
+const $=i=>document.getElementById(i),R=n=>"₹"+Math.round(n).toLocaleString("en-IN");
+const disc=q=>(T.find(t=>q>=t[0])||[0,0])[1],unit=(p,q)=>p.p*(1-disc(q));
+const ICO={pill:'<rect x="6" y="22" width="52" height="20" rx="10" transform="rotate(-35 32 32)" fill="#0e7c86"/><path d="M32 32l11-15a10 10 0 0 1 14 14L44 46z" fill="#7fd1d8" transform="translate(-10 4)"/>',drop:'<path d="M32 6C22 22 14 31 14 42a18 18 0 0 0 36 0C50 31 42 22 32 6z" fill="#0e7c86"/>',syr:'<rect x="24" y="14" width="16" height="30" rx="3" fill="#0e7c86"/><rect x="29" y="4" width="6" height="12" fill="#7fd1d8"/><rect x="30" y="44" width="4" height="14" fill="#7fd1d8"/><rect x="18" y="14" width="28" height="4" fill="#0a5f68"/>',box:'<rect x="10" y="18" width="44" height="34" rx="4" fill="#0e7c86"/><path d="M32 26v18M23 35h18" stroke="#fff" stroke-width="5"/>'};
+function cats(){$("cats").innerHTML=C.map((c,i)=>`<button class="chip ${i==cat?"on":""}" onclick="cat=${i};cats();render()">${c}</button>`).join("")}
+function render(){const s=$("q").value.trim().toLowerCase(),L=P.map((p,i)=>[p,i]).filter(([p])=>(!cat||p.c==cat)&&(!s||(p.n+p.b).toLowerCase().includes(s)));
+$("none").hidden=!!L.length;
+$("grid").innerHTML=L.map(([p,i])=>`<div class="card"><div class="art"><svg viewBox="0 0 64 64">${ICO[p.ic]}</svg><span class="tag ${p.rx?"rx":""}">${p.rx?"Prescription only":"Over the counter"}</span></div><div class="body"><small>${p.b}</small><h3>${p.n}</h3><div class="price">${R(p.p)} <small>per ${p.u}</small></div>
+<div class="ladder">${[[50,6],[100,12],[250,18]].map(t=>`<span>${t[0]}+ cases<b>${R(p.p*(1-t[1]/100))}</b></span>`).join("")}</div>
+<div class="add"><input class="qty" id="q${i}" type="number" min="10" value="10" aria-label="Cases"><button class="btn" onclick="add(${i})">Add to list</button></div><small>Minimum order: 10 cases</small></div></div>`).join("")}
+function go(){cat=0;cats();render();$("shop").scrollIntoView()}
+function add(i){const q=Math.max(10,parseInt($("q"+i).value)||10);cart[i]=(cart[i]||0)+q;ui();toast(P[i].n+" added")}
+function ui(){const k=Object.keys(cart);$("cc").textContent=k.length;
+if(!k.length){$("di").innerHTML='<p class="empty">Your list is empty. Add products from the catalogue to see bulk pricing.</p>';$("df").innerHTML="";return}
+let sub=0;$("di").innerHTML=k.map(i=>{const p=P[i],q=cart[i],u=unit(p,q),t=u*q;sub+=t;return`<div class="li"><div><b>${p.n}</b><small>${q} cases × ${R(u)}${disc(q)?" ("+Math.round(disc(q)*100)+"% off)":""}</small><button onclick="del(${i})">Remove</button></div><b>${R(t)}</b></div>`}).join("");
+const g=sub*.12;$("df").innerHTML=`<div class="sum"><span>Subtotal</span><span>${R(sub)}</span></div><div class="sum"><span>GST (12%, estimate)</span><span>${R(g)}</span></div><div class="sum t"><span>Estimated total</span><span>${R(sub+g)}</span></div><button class="btn" style="width:100%" onclick="place()">Send order request</button>`}
+function del(i){delete cart[i];ui()}
+function place(){const n=Object.keys(cart).length;for(const k in cart)delete cart[k];ui();tg(false);toast("Order request sent for "+n+" products. We will confirm within one working day.")}
+function sendQ(){if(!$("f1").value.trim()||!$("f2").value.trim())return toast("Enter your business name and phone number");["f1","f2","f4"].forEach(i=>$(i).value="");toast("Quote request received. We will call you shortly.")}
+function tg(o){$("dr").classList.toggle("on",o);$("ov").classList.toggle("on",o)}
+let tt;function toast(m){const t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),3200)}
+$("cb").onclick=()=>tg(true);$("cx").onclick=$("ov").onclick=()=>tg(false);
+document.onkeydown=e=>{if(e.key=="Escape")tg(false)};
+$("q").oninput=()=>{cat=0;cats();render()};
+$("th").onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme=="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=d?"light":"dark"};
+cats();render();ui();
+</script></body></html>
